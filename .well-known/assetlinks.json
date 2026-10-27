@@ -1,0 +1,10 @@
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.kevinmorgan.wordpurse",
+      "sha256_cert_fingerprints": ["FD:AC:D8:73:D3:14:DB:84:25:3A:83:F0:61:31:D0:5C:AF:9C:8B:18:CD:08:7F:4B:C6:BF:A3:FF:18:DF:B0:0F"]
+    }
+  }
+]
