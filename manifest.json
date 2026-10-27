@@ -2,14 +2,21 @@
   "name": "Wordpurse",
   "short_name": "Wordpurse",
   "description": "A polished mobile word puzzle game for Petroleum Engineering and English Vocabulary.",
-  "start_url": "./index.html",
+  "start_url": "/Wordpurse-/index.html",
+  "scope": "/Wordpurse-/",
   "display": "standalone",
   "background_color": "#0f172a",
   "theme_color": "#38bdf8",
   "orientation": "portrait",
   "icons": [
     {
-      "src": "icon.png",
+      "src": "/Wordpurse-/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/Wordpurse-/icon-512.png",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "any maskable"
