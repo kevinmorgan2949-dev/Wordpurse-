@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wordpurse - Mobile Word Puzzle</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="game-container">
+        <!-- Header -->
+        <header>
+            <div class="brand">Wordpurse</div>
+            <div class="stats-group">
+                <div class="stat-box">
+                    <span class="stat-label">Score</span>
+                    <span id="scoreVal" class="stat-value">0</span>
+                </div>
+                <div class="stat-box">
+                    <span class="stat-label">Best</span>
+                    <span id="highScoreVal" class="stat-value">0</span>
+                </div>
+                <div class="stat-box">
+                    <span class="stat-label">Streak</span>
+                    <span id="streakVal" class="stat-value">0</span>
+                </div>
+            </div>
+        </header>
+
+        <!-- Category & Level Info -->
+        <div class="toolbar">
+            <select id="categorySelect">
+                <option value="Petroleum Engineering">Petroleum Engineering</option>
+                <option value="Challenging English Vocabulary">Challenging English Vocabulary</option>
+            </select>
+            <div class="level-badge" id="levelBadge">Level 1</div>
+        </div>
+
+        <!-- Loader -->
+        <div class="loader-overlay" id="loader">
+            <div class="spinner"></div>
+            <p>Crafting puzzle...</p>
+        </div>
+
+        <!-- Main Game Card -->
+        <div class="game-card" id="gameCard">
+            <div class="clue-box" id="clueText">Loading clue...</div>
+
+            <!-- Answer Slots -->
+            <div class="answer-slots" id="answerSlots"></div>
+
+            <!-- Circular Letter Wheel Area -->
+            <div class="wheel-container">
+                <div class="letter-wheel" id="letterWheel"></div>
+                <div class="wheel-controls">
+                    <button class="control-btn shuffle-btn" id="shuffleBtn" title="Shuffle">⟳</button>
+                    <button class="control-btn hint-btn" id="hintBtn" title="Hint (-5 pts)">💡</button>
+                    <button class="control-btn clear-btn" id="clearBtn" title="Clear">✕</button>
+                </div>
+            </div>
+
+            <!-- Submit Button -->
+            <button class="submit-btn" id="submitBtn">SUBMIT ANSWER</button>
+
+            <div class="feedback" id="feedbackText"></div>
+        </div>
+    </div>
+
+    <!-- Win Celebration Modal -->
+    <div class="modal-overlay" id="winModal">
+        <div class="modal-card">
+            <h2>Brilliant! 🎉</h2>
+            <p id="winMessage">You cracked the puzzle!</p>
+            <div class="modal-stats">
+                <span>Reward: <strong id="rewardVal">+15 pts</strong></span>
+            </div>
+            <button class="submit-btn" id="nextPuzzleBtn">NEXT PUZZLE</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+      navigator.serviceWorker.register('./sw.js')
+        .then((reg) => console.log('Service Worker registered! Scope:', reg.scope))
+        .catch((err) => console.error('Service Worker registration failed:', err));
+    });
+  }
+</script>
+
+</body>
+</html>
